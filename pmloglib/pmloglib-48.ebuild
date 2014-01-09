@@ -15,6 +15,12 @@ RDEPEND="gentoo_webos/libpbnjson"
 DEPEND="gentoo_webos/cmake-modules-webos
 		${RDEPEND}"
 
+src_prepare() {
+    cmake-utils_src_prepare
+    epatch "${FILESDIR}/0001-Add-to-pkgconfig-file-pbnjson-library-dependency.patch"
+}
+
+
 src_configure() {
 	PKG_CONFIG_PATH=/opt/webos/lib64/pkgconfig:/opt/webos/usr/share/pkgconfig
  	local mycmakeargs=(

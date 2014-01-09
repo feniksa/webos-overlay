@@ -13,11 +13,6 @@ S="${WORKDIR}/${PN}-submissions-${PV}"
 DEPEND="dev-util/cmake
 		gentoo_webos/pmloglib"
 
-src_prepare() {
-    cmake-utils_src_prepare
-	epatch "${FILESDIR}/0001-Add-pbnjson-dependency-into-CMakeLists.txt.patch"
-}
-
 src_configure() {
 	PKG_CONFIG_PATH=/opt/webos/lib64/pkgconfig:/opt/webos/usr/share/pkgconfig
 
