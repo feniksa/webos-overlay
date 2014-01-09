@@ -11,25 +11,12 @@ SRC_URI="https://github.com/openwebos/${PN}/archive/submissions/${PV}.zip -> ${P
 
 S="${WORKDIR}/${PN}-submissions-${PV}"
 
-RDEPEND="gentoo_webos/libpbnjson"
-DEPEND="gentoo_webos/cmake-modules-webos
+RDEPEND="dev-libs/libpbnjson"
+DEPEND="dev-util/cmake-modules-webos
 		${RDEPEND}"
 
 src_prepare() {
+ 	epatch "${FILESDIR}/0001-Add-to-pkgconfig-file-pbnjson-library-dependency.patch"
     cmake-utils_src_prepare
-    epatch "${FILESDIR}/0001-Add-to-pkgconfig-file-pbnjson-library-dependency.patch"
 }
 
-
-src_configure() {
-	PKG_CONFIG_PATH=/opt/webos/lib64/pkgconfig:/opt/webos/usr/share/pkgconfig
- 	local mycmakeargs=(
-		"-DCMAKE_INSTALL_PREFIX:PATH=/opt/webos"
-		"-DWEBOS_INSTALL_ROOT:PATH=/opt/webos"
-	)
-	cmake-utils_src_configure 
-}
-
-src_compile() {
-	cmake-utils_src_compile
-}

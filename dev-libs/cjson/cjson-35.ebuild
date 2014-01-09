@@ -15,7 +15,7 @@ SRC_URI="https://github.com/openwebos/${PN}/archive/submissions/${PV}.zip -> ${P
 S="${WORKDIR}/${PN}-submissions-${PV}"
 
 DEPEND="
-	gentoo_webos/cmake-modules-webos
+	dev-util/cmake-modules-webos
 "
 
 src_prepare() {
@@ -23,7 +23,7 @@ src_prepare() {
 }
 
 src_configure() {	
-	local myconf="--prefix=/opt/webos/usr --enable-shared --disable-static"
+	local myconf="--enable-shared --disable-static"
 	econf ${myconf} 
 }
 
