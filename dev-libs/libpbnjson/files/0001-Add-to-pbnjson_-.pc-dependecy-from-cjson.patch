@@ -1,0 +1,50 @@
+From 5628c968cbf81ae356da49109577d187befdd368 Mon Sep 17 00:00:00 2001
+From: Maksym Sditanov <maxim.sditanov@lge.com>
+Date: Fri, 10 Jan 2014 19:31:19 +0200
+Subject: [PATCH 1/1] Add to pbnjson_*.pc dependecy from cjson
+
+:Release Notes:
+Add linking to cjson library
+
+:Detailed Notes:
+pbnjson library have external dependency from cjson library.
+Any component (like luna-service2, db8) should obviously add linking
+to flags to cjson if they use pbnjson library. To avoid potential
+linking problems it is usefull to add linking flags into pc files
+
+:Testing Performed:
+
+:QA Notes:
+Relative to https://g2g.palm.com/#/c/4359/
+
+:Issues Addressed:
+
+Open-webOS-DCO-1.0-Signed-off-by: Maksym Sditanov <maxim.sditanov@lge.com>
+
+Change-Id: I26904af0e643e02251ee76c56ca5b174c4e935fb
+---
+ files/pkgconfig/pbnjson_c.pc.in   | 1 +
+ files/pkgconfig/pbnjson_cpp.pc.in | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/files/pkgconfig/pbnjson_c.pc.in b/files/pkgconfig/pbnjson_c.pc.in
+index b6d83f1..e456861 100644
+--- a/files/pkgconfig/pbnjson_c.pc.in
++++ b/files/pkgconfig/pbnjson_c.pc.in
+@@ -24,3 +24,4 @@ Description: @WEBOS_PROJECT_SUMMARY@ (C edition)
+ Version: @WEBOS_COMPONENT_VERSION@
+ Libs: -L${libdir} -lpbnjson_c
+ Cflags: -I${includedir}
++Requires: cjson
+diff --git a/files/pkgconfig/pbnjson_cpp.pc.in b/files/pkgconfig/pbnjson_cpp.pc.in
+index 61b1d9a..765b59f 100644
+--- a/files/pkgconfig/pbnjson_cpp.pc.in
++++ b/files/pkgconfig/pbnjson_cpp.pc.in
+@@ -24,3 +24,4 @@ Description: @WEBOS_PROJECT_SUMMARY@ (C++ edition)
+ Version: @WEBOS_COMPONENT_VERSION@
+ Libs: -L${libdir} -lpbnjson_cpp -lpbnjson_c
+ Cflags: -I${includedir}
++Requires: cjson
+-- 
+1.8.3.2
+

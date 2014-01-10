@@ -25,6 +25,7 @@ DEPEND="dev-libs/luna-service2
 		dev-libs/icu"
 
 src_configure() {
+		PKG_CONFIG_PATH=/opt/webos/usr/lib64/pkgconfig:/opt/webos/usr/share/pkgconfig
         local mycmakeargs=(
                 "-DCMAKE_INSTALL_PREFIX:PATH=/opt/webos"
                 "-DWEBOS_INSTALL_ROOT:PATH=/opt/webos"

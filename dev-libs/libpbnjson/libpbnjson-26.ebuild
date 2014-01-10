@@ -17,6 +17,11 @@ DEPEND="dev-util/cmake-modules-webos
 		dev-libs/lemon
 		${RDEPEND}"
 
+src_prepare() {
+    cmake-utils_src_prepare
+	epatch "${FILESDIR}/0001-Add-to-pbnjson_-.pc-dependecy-from-cjson.patch"
+}
+
 src_configure() {
  	local mycmakeargs=(
 		"-DCMAKE_INSTALL_PREFIX:PATH=/opt/webos"
