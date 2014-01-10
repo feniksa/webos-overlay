@@ -1,12 +1,13 @@
 EAPI="5"
 inherit cmake-utils
 
-DESCRIPTION="Supper truper db8"
-HOMEPAGE="https://github.com/feniksa/indb8"
+DESCRIPTION="A userspace service that provides access to the Open webOS database"
+HOMEPAGE="https://github.com/openwebos/db8"
 SLOT="0"
+IUSE=""
 
 KEYWORDS="amd64"
-LICENSE="LGPL-2.1"
+LICENSE="Apache-2.0"
 
 if [[ ${PV} = *9999* ]]; then
 	inherit git-2
@@ -14,14 +15,14 @@ if [[ ${PV} = *9999* ]]; then
 	EGIT_BRANCH="master"
 	KEYWORDS=""
 else
-    SRC_URI="https://github.com/downloads/feniksa/indb8/indb8-${PV}.tar.bz2"
-    KEYWORDS="~amd64 ~x86"
-    S="${WORKDIR}/indb8-${PV}"
+	SRC_URI="https://github.com/feniksa/${PN}/archive/submissions/${PV}.zip -> ${P}.zip"
+    KEYWORDS="amd64"
+	S="${WORKDIR}/${PN}-submissions-${PV}"
 fi
 
-RDEPEND="dev-libs/icu"
-DEPEND="gentoo_webos/luna-service2
-                ${RDEPEND}"
+DEPEND="dev-libs/luna-service2 
+		dev-libs/glib 
+		dev-libs/icu"
 
 src_configure() {
         local mycmakeargs=(
@@ -31,6 +32,3 @@ src_configure() {
         cmake-utils_src_configure
 }
 
-src_compile() {
-        cmake-utils_src_compile
-}
