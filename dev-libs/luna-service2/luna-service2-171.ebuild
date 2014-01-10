@@ -17,6 +17,11 @@ src_configure() {
 	cmake-utils_src_configure
 }
 
-src_compile() {
-	cmake-utils_src_compile
+src_configure() {
+ 	local mycmakeargs=(
+		"-DCMAKE_INSTALL_PREFIX:PATH=/opt/webos"
+		"-DWEBOS_INSTALL_ROOT:PATH=/opt/webos"
+	)
+	cmake-utils_src_configure 
 }
+

@@ -16,3 +16,11 @@ RDEPEND="dev-libs/cjson"
 DEPEND="dev-util/cmake-modules-webos
 		dev-libs/lemon
 		${RDEPEND}"
+
+src_configure() {
+ 	local mycmakeargs=(
+		"-DCMAKE_INSTALL_PREFIX:PATH=/opt/webos"
+		"-DWEBOS_INSTALL_ROOT:PATH=/opt/webos"
+	)
+	cmake-utils_src_configure 
+}
