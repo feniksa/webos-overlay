@@ -4,7 +4,7 @@ inherit cmake-utils
 DESCRIPTION="A userspace service that provides access to the Open webOS database"
 HOMEPAGE="https://github.com/openwebos/db8"
 SLOT="0"
-IUSE=""
+IUSE="tests"
 
 KEYWORDS="amd64"
 LICENSE="Apache-2.0"
