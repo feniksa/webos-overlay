@@ -1,0 +1,20 @@
+#!/sbin/runscript
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+	export LD_LIBRARY_PATH="/opt/webos/usr/lib64"
+
+	start-stop-daemon --start -- /opt/webos/usr/sbin/ls-hubd --public --daemon --conf /opt/webos/etc/luna-service2/ls-public.conf --pid-dir=/var/run --syslog
+
+	eend 
+}
+
+stop() {
+	start-stop-daemon --stop -p /var/run/ls-hubd.public.pid 
+}
+
+# vim: ts=4 filetype=gentoo-init-d

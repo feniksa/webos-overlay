@@ -26,3 +26,14 @@ src_configure() {
 	cmake-utils_src_configure 
 }
 
+src_install() {
+	cmake-utils_src_install
+
+	keepdir /opt/webos/usr/share/dbus-1/{system-,}services
+	keepdir /opt/webos/var/palm/ls2/{roles,services}/{prv,pub}
+
+	newinitd "${FILESDIR}/ls-hubd-prv" ls-hubd-prv 
+	newinitd "${FILESDIR}/ls-hubd-pub" ls-hubd-pub
+
+}
+
