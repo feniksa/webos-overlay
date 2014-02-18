@@ -22,6 +22,7 @@ fi
 
 DEPEND="dev-libs/luna-service2 
 		dev-libs/glib 
+		dev-libs/leveldb
 		dev-libs/icu"
 
 src_configure() {

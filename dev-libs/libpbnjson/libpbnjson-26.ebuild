@@ -14,6 +14,8 @@ S="${WORKDIR}/${PN}-submissions-${PV}"
 
 RDEPEND="dev-libs/cjson"
 DEPEND="dev-util/cmake-modules-webos
+		dev-libs/uriparser
+		dev-libs/yajl
 		dev-libs/lemon
 		${RDEPEND}"
 
