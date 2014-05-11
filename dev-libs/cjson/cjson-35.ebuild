@@ -14,16 +14,12 @@ LICENSE="LGPL-2.1"
 SRC_URI="https://github.com/openwebos/${PN}/archive/submissions/${PV}.zip -> ${P}.zip"
 S="${WORKDIR}/${PN}-submissions-${PV}"
 
-DEPEND="
-	dev-util/cmake-modules-webos
-"
-
 src_prepare() {
 	eautoreconf
 }
 
 src_configure() {	
-	local myconf="--prefix=/opt/webos/usr --enable-shared --disable-static"
+	local myconf="--enable-shared --disable-static"
 	econf ${myconf} 
 }
 
