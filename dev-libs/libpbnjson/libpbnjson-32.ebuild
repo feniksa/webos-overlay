@@ -1,5 +1,5 @@
 EAPI="5"
-inherit cmake-utils
+inherit webos-cmake
 
 DESCRIPTION="A JSON engine, implemented as a pair of libraries with APIs for
 easier C and C++ abstraction over the core PBNJSON library."
@@ -12,12 +12,10 @@ SRC_URI="https://github.com/openwebos/${PN}/archive/submissions/${PV}.zip -> ${P
 
 S="${WORKDIR}/${PN}-submissions-${PV}"
 
-RDEPEND="dev-libs/cjson"
-DEPEND="dev-util/cmake-modules-webos
+DEPEND="dev-libs/cjson
 		dev-libs/uriparser
 		dev-libs/yajl
-		dev-libs/lemon
-		${RDEPEND}"
+		dev-libs/lemon"
 
 src_prepare() {
     cmake-utils_src_prepare
@@ -25,10 +23,8 @@ src_prepare() {
 }
 
 src_configure() {
- 	local mycmakeargs=(
-		"-DCMAKE_INSTALL_PREFIX:PATH=/opt/webos"
-		"-DWEBOS_INSTALL_ROOT:PATH=/opt/webos"
-		"-DNO_LOGGING=true"
+ 	local mycmakeargs+=(
+		-DNO_LOGGING=true
 	)
-	cmake-utils_src_configure 
+	webos-cmake_src_configure 
 }
