@@ -19,7 +19,7 @@ src_prepare() {
 }
 
 src_configure() {	
-	local myconf="--enable-shared --disable-static"
+	local myconf+="--enable-shared --disable-static"
 	econf ${myconf} 
 }
 
