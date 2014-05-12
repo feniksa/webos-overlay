@@ -6,9 +6,8 @@ depend() {
 
 start() {
 	ebegin "Starting ${SVCNAME}"
-	export LD_LIBRARY_PATH="/opt/webos/usr/lib64"
 
-	start-stop-daemon --start -- /opt/webos/usr/sbin/ls-hubd --public --daemon --conf /opt/webos/etc/luna-service2/ls-public.conf --pid-dir=/var/run --syslog
+	start-stop-daemon --start -- /usr/sbin/ls-hubd --public --daemon --conf /etc/luna-service2/ls-public.conf --pid-dir=/var/run --syslog
 
 	eend 
 }
