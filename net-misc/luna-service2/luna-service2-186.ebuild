@@ -20,18 +20,18 @@ src_prepare() {
 src_install() {
 	cmake-utils_src_install
 
-	keepdir /opt/webos/usr/share/dbus-1/{system-,}services
-	keepdir /opt/webos/var/palm/ls2/{roles,services}/{prv,pub}
+	keepdir /usr/share/dbus-1/{system-,}services
+	keepdir /var/palm/ls2/{roles,services}/{prv,pub}
 
 	newinitd "${FILESDIR}/ls-hubd-prv" ls-hubd-prv 
 	newinitd "${FILESDIR}/ls-hubd-pub" ls-hubd-pub
 
 	# remove even'd files as we doesn't support them
-	rm "${D}"/opt/webos/etc/event.d/* || die "Can't remove event.d files, recheck ebuild"
-	rmdir "${D}"/opt/webos/etc/event.d || die "Can't remove even't dir, ebuild error"
+	rm "${D}"/etc/event.d/* || die "Can't remove event.d files, recheck ebuild"
+	rmdir "${D}"/etc/event.d || die "Can't remove even't dir, ebuild error"
 
 	# remove upstart files as we provide gentoo openrc script
-	rm "${D}"/opt/webos/etc/init/* || die "Can't remove upstart scripts, recheck ebuild"
-	rmdir "${D}"/opt/webos/etc/init || die "Can't remove /opt/webos/etc/init dir, recheck ebuild"
+	rm "${D}"/etc/init/* || die "Can't remove upstart scripts, recheck ebuild"
+	rmdir "${D}"/etc/init || die "Can't remove /opt/webos/etc/init dir, recheck ebuild"
 }
 

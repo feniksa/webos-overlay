@@ -15,8 +15,8 @@ EXPORT_FUNCTIONS src_configure
 
 webos-cmake_src_configure() {
 	mycmakeargs+=(
-		-DCMAKE_INSTALL_PREFIX:PATH=/opt/webos
-		-DWEBOS_INSTALL_ROOT:PATH=/opt/webos
+		-DCMAKE_INSTALL_PREFIX:PATH="/"
+		-DWEBOS_INSTALL_ROOT:PATH="/"
 	)
 	cmake-utils_src_configure 
 }

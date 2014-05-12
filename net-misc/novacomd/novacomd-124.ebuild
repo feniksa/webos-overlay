@@ -24,7 +24,7 @@ src_configure() {
 src_install() {
 	cmake-utils_src_install
 
-	rm "${D}"/opt/webos/etc/event.d/novacomd || die "This install doesn't provide upstart file Novacomd. Please, re-check ebuild"
+	rm "${D}"/etc/event.d/novacomd || die "This install doesn't provide upstart file Novacomd. Please, re-check ebuild"
 
 	newinitd "${FILESDIR}/novacomd" novacomd
 }

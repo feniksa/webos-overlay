@@ -1,5 +1,5 @@
 EAPI="5"
-inherit cmake-utils
+inherit webos-cmake
 
 DESCRIPTION="A userspace service that provides access to the Open webOS database"
 HOMEPAGE="https://github.com/openwebos/db8"
@@ -20,17 +20,8 @@ else
 	S="${WORKDIR}/${PN}-submissions-${PV}"
 fi
 
-DEPEND="dev-libs/luna-service2 
+DEPEND="net-misc/luna-service2 
 		dev-libs/glib 
 		dev-libs/leveldb
 		dev-libs/icu"
-
-src_configure() {
-		PKG_CONFIG_PATH=/opt/webos/usr/lib64/pkgconfig:/opt/webos/usr/share/pkgconfig
-        local mycmakeargs=(
-                "-DCMAKE_INSTALL_PREFIX:PATH=/opt/webos"
-                "-DWEBOS_INSTALL_ROOT:PATH=/opt/webos"
-        )
-        cmake-utils_src_configure
-}
 
