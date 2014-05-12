@@ -6,9 +6,8 @@ depend() {
 
 start() {
         ebegin "Starting ${SVCNAME}"
-        export LD_LIBRARY_PATH="/opt/webos/usr/lib64"
 
-        start-stop-daemon --make-pidfile --pidfile=/run/novacomd.pid --background --start -- /opt/webos/usr/sbin/novacomd  -b
+        start-stop-daemon --make-pidfile --pidfile=/run/novacomd.pid --background --start -- /usr/sbin/novacomd  -b
 
         eend 
 }
