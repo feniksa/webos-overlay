@@ -7,7 +7,7 @@ depend() {
 start() {
 	ebegin "Starting ${SVCNAME}"
 
-	start-stop-daemon --start -- /usr/sbin/ls-hubd --daemon --conf /etc/luna-service2/ls-private.conf --pid-dir=/var/run --syslog
+	start-stop-daemon --start -- /usr/sbin/ls-hubd --daemon --conf /etc/luna-service2/ls-private.conf --pid-dir=/run
 
 	eend 
 }
