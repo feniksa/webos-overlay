@@ -1,8 +1,8 @@
 EAPI="5"
 inherit webos-cmake
 
-DESCRIPTION="Open webOS Platform Portability Layer"
-HOMEPAGE="https://github.com/openwebos/nyx-lib"
+DESCRIPTION="Open webOS portability layer - device specific modules"
+HOMEPAGE="https://github.com/openwebos/nyx-modules"
 SLOT="0"
 
 KEYWORDS="amd64"
