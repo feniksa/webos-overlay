@@ -23,5 +23,12 @@ fi
 DEPEND="net-misc/luna-service2 
 		dev-libs/glib 
 		dev-libs/leveldb
-		dev-libs/icu"
+		dev-libs/icu
+		!!dev-db/db8"
 
+src_install() {
+	cmake-utils_src_install
+	
+	dodir /var/db/main
+	newinitd "${FILESDIR}/indb8" indb8
+}
