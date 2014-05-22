@@ -20,7 +20,7 @@ else
 	S="${WORKDIR}/${PN}-submissions-${PV}"
 fi
 
-DEPEND="net-misc/luna-service2 
+DEPEND="	sys-process/luna-service2 
 		dev-libs/glib 
 		dev-libs/leveldb
 		dev-libs/icu

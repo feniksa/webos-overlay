@@ -1,5 +1,5 @@
 EAPI="5"
-inherit webos-cmake
+inherit webos-cmake webos-github
 
 DESCRIPTION="A userspace service that provides access to the openWebOS database"
 HOMEPAGE="https://github.com/openwebos/db8"
@@ -7,14 +7,12 @@ SLOT="0"
 
 KEYWORDS="amd64"
 LICENSE="LGPL-2.1"
-SRC_URI="https://github.com/openwebos/${PN}/archive/submissions/${PV}.zip -> ${P}.zip"
-S="${WORKDIR}/${PN}-submissions-${PV}"
 IUSE="tests"
 
 DEPEND="dev-libs/glib
 		dev-libs/pmloglib
 		dev-libs/libpbnjson
-		net-misc/luna-service2
+		sys-process/luna-service2
 		!!dev-db/indb8"
 
 src_configure() {

@@ -2,3 +2,5 @@ dev-libs
 dev-util
 dev-db
 net-misc
+sys-process
+sys-apps
