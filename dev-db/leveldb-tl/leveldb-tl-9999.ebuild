@@ -3,7 +3,7 @@ inherit cmake-utils
 
 DESCRIPTION="Template library to build a more complex storage schema with leveldb as a backend"
 HOMEPAGE="https://github.com/ony/leveldb-tl"
-#AUTHOR="Nikolay Orliuk <virkony@gmail.com>"
+AUTHOR="Nikolay Orliuk <virkony@gmail.com>"
 SLOT="0"
 
 KEYWORDS="amd64"
