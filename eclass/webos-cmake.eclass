@@ -18,8 +18,7 @@ webos-cmake_src_configure() {
 		-DCMAKE_INSTALL_PREFIX:PATH="/"
 		-DWEBOS_INSTALL_ROOT:PATH="/"
 	)
-	cmake-utils_src_configure 
+	cmake-utils_src_configure
 }
 
 DEPEND+="dev-util/cmake-modules-webos"
-
