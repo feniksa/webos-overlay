@@ -30,5 +30,7 @@ src_install() {
 	cmake-utils_src_install
 	
 	dodir /var/db/main
-	newinitd "${FILESDIR}/indb8" indb8
+	dodir /var/db/temp
+	newinitd "${FILESDIR}/indb8-maindb" indb8-maindb
+	newinitd "${FILESDIR}/indb8-tempdb" indb8-tempdb
 }
