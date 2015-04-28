@@ -9,16 +9,9 @@ IUSE="leveldb sandwich berkdb ls2 test"
 KEYWORDS="amd64"
 LICENSE="Apache-2.0"
 
-if [[ ${PV} = *9999* ]]; then
-	inherit git-2
-	EGIT_REPO_URI="git://github.com/feniksa/indb8.git"
-	EGIT_BRANCH="master"
-	KEYWORDS=""
-else
-	SRC_URI="https://github.com/feniksa/${PN}/archive/submissions/${PV}.zip -> ${P}.zip"
-    KEYWORDS="amd64"
-	S="${WORKDIR}/${PN}-submissions-${PV}"
-fi
+SRC_URI="https://github.com/feniksa/${PN}/archive/submissions/${PV}.zip -> ${P}.zip"
+KEYWORDS="amd64"
+S="${WORKDIR}/${PN}-submissions-${PV}"
 
 DEPEND="dev-libs/glib
 		leveldb?  ( >=dev-libs/leveldb-1.14.0 )
