@@ -25,14 +25,22 @@ EXPORT_FUNCTIONS pkg_setup
 
 webos-github_pkg_setup() {
 	[ "${PV}" = "9999" ] || return
-	eval "URI=\$${PN}_LIVE_REPO"
-	if [ -z "$URI" ]; then
+
+	local pn uri
+	pn=${PN//[-+]/_}
+	uri=${pn}_LIVE_REPO
+
+	[[ ${!uri} ]] || (
 		ewarn "Public repo is severly outdated. If you have access to current repo set"
-		ewarn "\"${PN}_LIVE_REPO\" variable pointing to it. In addition, if you want to use"
-		ewarn "another branch, you can set it via \"${PN}_LIVE_BRANCH\" variable."
+		ewarn "\"${uri}\" variable pointing to it. In addition, if you want to use"
+		ewarn "another branch, you can set it via \"${pn}_LIVE_BRANCH\" variable."
 		ewarn "This can be done, for example, by executing"
-		ewarn "  echo '${PN}_LIVE_REPO=\"git://<your_mirror>/g2g.lgsvl.com/${PN}\"' >> /etc/portage/env/webos-live.conf"
-		ewarn "  echo '${PN}_LIVE_BRANCH=\"develop\"' >> /etc/portage/env/webos-live.conf"
+		ewarn "  echo '${uri}=\"git://<your_mirror>/g2g.lgsvl.com/${PN}\"' >> /etc/portage/env/webos-live.conf"
+		ewarn "  echo '${pn}_LIVE_BRANCH=\"develop\"' >> /etc/portage/env/webos-live.conf"
 		ewarn "  echo '${CATEGORY}/${PN} webos-live.conf' >> /etc/portage/package.env"
-	fi
+		ewarn "or"
+		ewarn "  mkdir -p /etc/portage/env/${CATEGORY}"
+		ewarn "  echo '${uri}=\"git://<your_mirror>/g2g.lgsvl.com/${PN}\"' >> /etc/portage/env/${CATEGORY}/${PN}"
+		ewarn "  echo '${pn}_LIVE_BRANCH=\"develop\"' >> /etc/portage/env/${CATEGORY}/${PN}"
+	)
 }
