@@ -9,10 +9,10 @@ SLOT="0"
 
 KEYWORDS=""
 LICENSE="Apache2"
-IUSE="nolog"
 
 DEPEND="
 	dev-libs/lemon
+	sys-devel/flex
 "
 RDEPEND="
 	>=dev-libs/glib-2.30
@@ -20,10 +20,3 @@ RDEPEND="
 	dev-libs/uriparser
 	dev-libs/yajl
 "
-
-src_configure() {
-	local mycmakeargs+=(
-		$(cmake-utils_use nolog NO_LOGGING)
-	)
-	webos-cmake_src_configure
-}
