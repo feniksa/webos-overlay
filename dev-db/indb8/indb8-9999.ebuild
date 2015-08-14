@@ -38,6 +38,7 @@ src_configure() {
 				$(cmake-utils_use_build leveldb  ENGINE_LEVELDB)
 				$(cmake-utils_use_build sandwich ENGINE_SANDWICH)
 				$(cmake-utils_use_build berkdb   ENGINE_BERKELEY)
+				-DCMAKE_INSTALL_PREFIX="/"
         )
 
         cmake-utils_src_configure
