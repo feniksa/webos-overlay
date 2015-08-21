@@ -4,7 +4,7 @@ inherit webos-cmake
 DESCRIPTION="A userspace service that provides access to the Open webOS database"
 HOMEPAGE="https://github.com/openwebos/db8"
 SLOT="0"
-IUSE="leveldb sandwich berkdb ls2 test jsonobfucate"
+IUSE="leveldb sandwich berkdb ls2 tests jsonobfucate"
 
 KEYWORDS="amd64"
 LICENSE="Apache-2.0"
@@ -18,7 +18,7 @@ DEPEND="dev-libs/glib
 		sandwich? ( >=dev-db/leveldb-tl-0.1.5 )
 		berkdb?   ( >=sys-libs/db-4.8.30 )
 		ls2?      ( >=sys-process/luna-service2-200.0 )
-		test?	  ( >=dev-cpp/gtest-1.7.0 )
+		tests?	  ( >=dev-cpp/gtest-1.7.0 )
 		dev-libs/icu
 		!!dev-db/db8"
 
@@ -27,7 +27,7 @@ RDEPEND="${DEPEND}"
 src_configure() {
         local mycmakeargs=(
 				$(cmake-utils_use_build ls2      	   LS2)
-				$(cmake-utils_use_build test     	   TESTING)
+				$(cmake-utils_use_build tests    	   TESTING)
 				$(cmake-utils_use_build leveldb  	   ENGINE_LEVELDB)
 				$(cmake-utils_use_build sandwich 	   ENGINE_SANDWICH)
 				$(cmake-utils_use_build berkdb   	   ENGINE_BERKELEY)

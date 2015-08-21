@@ -14,5 +14,6 @@
 	<flag name="leveldb">Add support of leveldb no-sql engine (non txn safe)</flag>
 	<flag name="sandwich">Add support of leveldb no-sql engine via leveldb-tl library</flag>
 	<flag name="berkdb">Add support of berkeley database no-sql engine</flag>
+    <flag name="jsonobfucate">Build json obfuscator tool</flag>
   </use>
 </pkgmetadata>
