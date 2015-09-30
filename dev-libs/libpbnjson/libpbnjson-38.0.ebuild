@@ -18,6 +18,7 @@ RDEPEND="
 	dev-libs/gmp
 	dev-libs/uriparser
 	dev-libs/yajl
+	dev-libs/boost
 "
 
 src_prepare() {

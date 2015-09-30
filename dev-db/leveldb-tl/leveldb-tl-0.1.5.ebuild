@@ -8,7 +8,7 @@ SLOT="0"
 
 KEYWORDS="amd64"
 LICENSE="Apache-2.0"
-DEPEND="dev-libs/leveldb"
+DEPEND="dev-libs/leveldb dev-cpp/gtest"
 
 SRC_URI="https://github.com/ony/${PN}/archive/gcc-4.7/v${PV}.zip -> ${P}.zip"
 KEYWORDS="amd64"

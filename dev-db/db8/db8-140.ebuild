@@ -13,6 +13,7 @@ DEPEND="dev-db/leveldb-tl
 		dev-libs/glib
 		dev-libs/pmloglib
 		dev-libs/libpbnjson
+		dev-libs/icu
 		sys-process/luna-service2		
 		!!dev-db/indb8"
 
