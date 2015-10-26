@@ -9,7 +9,7 @@ HOMEPAGE="http://www.hwaci.com/sw/lemon/"
 SRC_URI="http://www.sqlite.org/sqlite-${PV}.tar.gz"
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS="x86 amd64"
 IUSE=""
 
 S=${WORKDIR}/sqlite-${PV}
