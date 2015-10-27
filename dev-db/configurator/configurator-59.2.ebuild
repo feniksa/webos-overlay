@@ -5,12 +5,12 @@ DESCRIPTION="Creates the database schema for webos Applications"
 HOMEPAGE="https://github.com/openwebos/configurator"
 SLOT="0"
 
-KEYWORDS="amd64"
-LICENSE="Apache2"
+KEYWORDS="x86 amd64 ~arm"
+LICENSE="Apache-2.0"
 
 DEPEND="dev-db/db8
 		dev-libs/pmloglib
-	   "
+		"
 
 src_install() {
 	cmake-utils_src_install
@@ -19,6 +19,4 @@ src_install() {
 	rm -r "${D}"/etc/init || die "Can't remove init dir, please, recheck ebuild"
 
 	newinitd "${FILESDIR}/configurator" configurator
-
 }
-

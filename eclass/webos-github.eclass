@@ -13,7 +13,7 @@ if [ "${PV}" != "9999" ]; then
 	inherit versionator
 
 	MAJORV=$(get_major_version)
-	SRC_URI="https://github.com/openwebos/${PN}/archive/submissions/${MAJORV}.zip -> ${P}.zip"
+	SRC_URI="https://github.com/openwebos/${PN}/archive/submissions/${MAJORV}.tar.gz -> ${PN}-${MAJORV}.tar.gz"
 	S="${WORKDIR}/${PN}-submissions-${MAJORV}"
 else
 	inherit git-r3

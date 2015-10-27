@@ -5,8 +5,8 @@ DESCRIPTION="Utility to invoke nyx library device type commands."
 HOMEPAGE="https://github.com/openwebos/nyx-utils"
 SLOT="0"
 
-KEYWORDS="amd64"
-LICENSE="LGPL-2.1"
+KEYWORDS="x86 amd64 ~arm"
+LICENSE="Apache-2.0"
 DEPEND="dev-libs/glib
 		dev-libs/nyx-lib"
 

@@ -7,7 +7,7 @@ HOMEPAGE="https://github.com/openwebos/luna-service2"
 SLOT="0"
 
 KEYWORDS=""
-LICENSE="Apache2"
+LICENSE="Apache-2.0"
 
 RDEPEND="
 	dev-libs/libpbnjson
@@ -31,4 +31,3 @@ src_install() {
 	rm "${D}"/etc/init/* || die "Can't remove upstart scripts, recheck ebuild"
 	rmdir "${D}"/etc/init || die "Can't remove /opt/webos/etc/init dir, recheck ebuild"
 }
-

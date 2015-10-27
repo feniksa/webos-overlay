@@ -5,8 +5,8 @@ DESCRIPTION="A userspace service that provides access to the openWebOS database"
 HOMEPAGE="https://github.com/openwebos/db8"
 SLOT="0"
 
-KEYWORDS="amd64"
-LICENSE="LGPL-2.1"
+KEYWORDS="x86 amd64 ~arm"
+LICENSE="Apache-2.0"
 IUSE="tests"
 
 DEPEND="dev-db/leveldb-tl
@@ -14,7 +14,7 @@ DEPEND="dev-db/leveldb-tl
 		dev-libs/pmloglib
 		dev-libs/libpbnjson
 		dev-libs/icu
-		sys-process/luna-service2		
+		sys-process/luna-service2
 		!!dev-db/indb8"
 
 src_configure() {
@@ -40,4 +40,3 @@ src_install() {
 	newinitd "${FILESDIR}/db8-tempdb" db8-tempdb
 
 }
-

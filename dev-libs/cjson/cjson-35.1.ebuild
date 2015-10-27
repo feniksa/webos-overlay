@@ -10,15 +10,15 @@ HOMEPAGE="https://github.com/openwebos/cjson"
 SLOT="0"
 
 KEYWORDS="amd64"
-LICENSE="LGPL-2.1"
+LICENSE="MIT"
 
 src_prepare() {
 	eautoreconf
 }
 
-src_configure() {	
+src_configure() {
 	local myconf+="--enable-shared --disable-static"
-	econf ${myconf} 
+	econf ${myconf}
 }
 
 src_compile() {

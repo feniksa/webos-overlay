@@ -1,4 +1,4 @@
-EAPI="5"
+EAPI=5
 inherit webos-cmake webos-github
 
 DESCRIPTION="A JSON engine, implemented as a pair of libraries with APIs for
@@ -6,24 +6,22 @@ easier C and C++ abstraction over the core PBNJSON library."
 HOMEPAGE="https://github.com/openwebos/libpbnjson"
 SLOT="0"
 
-KEYWORDS="x86 amd64"
-LICENSE="Apache2"
+KEYWORDS="x86 amd64 ~arm"
+LICENSE="Apache-2.0"
 IUSE="nolog"
 
+# boost required for executable which never installed, but always compiled
 DEPEND="
 	dev-libs/lemon
+	dev-libs/boost
 "
 RDEPEND="
 	>=dev-libs/glib-2.30
 	dev-libs/gmp
 	dev-libs/uriparser
 	dev-libs/yajl
-	dev-libs/boost
+	!nolog? ( dev-libs/pmloglib )
 "
-
-src_prepare() {
-	cmake-utils_src_prepare
-}
 
 src_configure() {
 	local mycmakeargs+=(
