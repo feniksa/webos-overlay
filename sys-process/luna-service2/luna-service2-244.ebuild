@@ -6,19 +6,21 @@ DESCRIPTION="Open webOS Luna System Bus library, daemon, and utilities"
 HOMEPAGE="https://github.com/openwebos/luna-service2"
 SLOT="0"
 
-KEYWORDS="x86 amd64 ~arm"
+KEYWORDS="~x86 ~amd64 ~arm"
 LICENSE="Apache-2.0"
 
-DEPEND=">=dev-util/cmake-modules-webos-19"
+DEPEND=">=dev-util/cmake-modules-webos-30"
 
 RDEPEND="
-	>=dev-libs/libpbnjson-30
+	>=dev-libs/libpbnjson-52
 	dev-libs/pmloglib
 "
 
+RESTRICT="fetch"
+
 src_prepare() {
 	cmake-utils_src_prepare
-	epatch "${FILESDIR}/add_pmloglib_dependency.patch"
+	epatch "${FILESDIR}/0001-Remove-build-system-check.patch"
 }
 
 src_install() {

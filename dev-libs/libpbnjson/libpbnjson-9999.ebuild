@@ -13,8 +13,10 @@ IUSE="nolog"
 
 # boost required for executable which never installed, but always compiled
 DEPEND="
+	>=dev-util/cmake-modules-webos-21
 	dev-libs/lemon
 	sys-devel/flex
+	dev-libs/boost
 "
 RDEPEND="
 	>=dev-libs/glib-2.30

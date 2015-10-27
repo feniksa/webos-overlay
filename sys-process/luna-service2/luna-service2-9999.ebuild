@@ -9,6 +9,8 @@ SLOT="0"
 KEYWORDS=""
 LICENSE="Apache-2.0"
 
+DEPEND="dev-util/cmake-modules-webos"
+
 RDEPEND="
 	dev-libs/libpbnjson
 	dev-libs/pmloglib

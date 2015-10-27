@@ -21,7 +21,17 @@ else
 	EGIT_REPO_URI="git://github.com/openwebos/${PN}.git"
 fi
 
-EXPORT_FUNCTIONS pkg_setup
+EXPORT_FUNCTIONS pkg_nofetch pkg_setup
+
+webos-github_pkg_nofetch() {
+	echo "$RESTRICT" | grep -q fetch || return
+
+	[[ -f "${DISTDIR}/${A}" ]] && return
+
+	einfo "Probably you try to install version not available to general public. If you"
+	einfo "have access to current repo you can generate required distfile by running"
+	einfo "  git archive -o ${DISTDIR}/${A} --prefix ${PN}-submissions-${MAJORV}/ submissions/${MAJORV}"
+}
 
 webos-github_pkg_setup() {
 	[ "${PV}" = "9999" ] || return

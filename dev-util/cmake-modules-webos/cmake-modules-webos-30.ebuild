@@ -6,12 +6,14 @@ DESCRIPTION="CMake modules needed to build Open webOS components"
 HOMEPAGE="https://github.com/openwebos/cmake-modules-webos"
 SLOT="0"
 
-KEYWORDS="x86 amd64 ~arm"
+KEYWORDS="~x86 ~amd64 ~arm"
 LICENSE="Apache-2.0"
 DEPEND="dev-util/cmake"
 
+RESTRICT="fetch"
+
 src_prepare() {
-	epatch "${FILESDIR}/0001-Remove-GTEST-macro-check.patch"
+	epatch "${FILESDIR}/0001-Remove-GTEST-source-search.patch"
 	cmake-utils_src_prepare
 }
 

@@ -9,8 +9,10 @@ SLOT="0"
 KEYWORDS="x86 amd64 ~arm"
 LICENSE="Apache-2.0"
 
+DEPEND=">=dev-util/cmake-modules-webos-19"
+
 RDEPEND="
-	dev-libs/libpbnjson
+	>=dev-libs/libpbnjson-30
 	dev-libs/pmloglib
 "
 
