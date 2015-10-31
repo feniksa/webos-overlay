@@ -1,3 +1,7 @@
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
 EAPI="5"
 inherit webos-cmake webos-github
 
@@ -17,7 +21,7 @@ DEPEND="dev-libs/pmloglib
 src_install() {
 	cmake-utils_src_install
 
-	newinitd "${FILESDIR}/activitymanager" activitymanager 
+	newinitd "${FILESDIR}/activitymanager" activitymanager
 
 	# remove even'd files as we doesn't support them
 	rm -rf "${D}"/etc/event.d || die "Can't remove event.d files, recheck ebuild"

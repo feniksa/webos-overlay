@@ -1,3 +1,7 @@
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
 EAPI="5"
 inherit webos-cmake
 
@@ -13,8 +17,8 @@ S="${WORKDIR}/${PN}-submissions-${PV}"
 DEPEND="dev-libs/pmloglib"
 
 src_prepare() {
-    cmake-utils_src_prepare
-    epatch "${FILESDIR}/add_pmloglib_dependency.patch"
+	cmake-utils_src_prepare
+	epatch "${FILESDIR}/add_pmloglib_dependency.patch"
 }
 
 src_install() {
@@ -23,7 +27,7 @@ src_install() {
 	keepdir /usr/share/dbus-1/{system-,}services
 	keepdir /var/palm/ls2/{roles,services}/{prv,pub}
 
-	newinitd "${FILESDIR}/ls-hubd-prv" ls-hubd-prv 
+	newinitd "${FILESDIR}/ls-hubd-prv" ls-hubd-prv
 	newinitd "${FILESDIR}/ls-hubd-pub" ls-hubd-pub
 
 	# remove even'd files as we doesn't support them
@@ -34,4 +38,3 @@ src_install() {
 	rm "${D}"/etc/init/* || die "Can't remove upstart scripts, recheck ebuild"
 	rmdir "${D}"/etc/init || die "Can't remove /opt/webos/etc/init dir, recheck ebuild"
 }
-

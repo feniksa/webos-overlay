@@ -1,3 +1,7 @@
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
 EAPI="5"
 inherit webos-cmake versionator
 
@@ -25,7 +29,7 @@ DEPEND="dev-libs/pmloglib
 src_install() {
 	cmake-utils_src_install
 
-	newinitd "${FILESDIR}/activitymanager" activitymanager 
+	newinitd "${FILESDIR}/activitymanager" activitymanager
 #	newinitd "${FILESDIR}/ls-hubd-pub" ls-hubd-pub
 
 	# remove even'd files as we doesn't support them
