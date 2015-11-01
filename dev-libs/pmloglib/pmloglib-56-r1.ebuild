@@ -9,7 +9,7 @@ inherit webos-cmake webos-github cmake-utils
 DESCRIPTION="The Open webOS logging library"
 HOMEPAGE="https://github.com/openwebos/pmloglib"
 
-KEYWORDS="x86 amd64"
+KEYWORDS="amd64"
 LICENSE="Apache-2.0"
 IUSE="-loggingon -parseonly"
 
