@@ -5,7 +5,7 @@
 	<email>den4ikkss@gmail.com</email>
     <name>Denis Romanchuk</name>
 </maintainer>
-<longdescription>Long description of the package</longdescription>
+<longdescription>The Open webOS logging library</longdescription>
 <use>
 	<flag name="loggingon">Enable logging system by default</flag>
     <flag name="parseonly">Parse default only option, wtf</flag>

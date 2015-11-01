@@ -14,5 +14,5 @@ SLOT="0"
 KEYWORDS="x86 amd64"
 
 src_install() {
-	cmake-utils_src_install	
+	cmake-utils_src_install
 }
