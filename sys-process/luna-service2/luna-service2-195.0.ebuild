@@ -16,10 +16,7 @@ RDEPEND="
 	dev-libs/pmloglib
 "
 
-src_prepare() {
-	cmake-utils_src_prepare
-	epatch "${FILESDIR}/add_pmloglib_dependency.patch"
-}
+PATCHES=( "${FILESDIR}/add_pmloglib_dependency.patch" )
 
 src_install() {
 	cmake-utils_src_install

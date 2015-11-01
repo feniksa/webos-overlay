@@ -8,12 +8,10 @@ SLOT="0"
 
 KEYWORDS="x86 amd64 ~arm"
 LICENSE="Apache-2.0"
+
 DEPEND="dev-util/cmake"
 
-src_prepare() {
-	epatch "${FILESDIR}/0001-Remove-GTEST-macro-check.patch"
-	cmake-utils_src_prepare
-}
+PATCHES=( "${FILESDIR}/0001-Remove-GTEST-macro-check.patch" )
 
 src_configure() {
 	local mycmakeargs=(

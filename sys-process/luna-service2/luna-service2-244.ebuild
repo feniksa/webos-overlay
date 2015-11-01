@@ -16,12 +16,9 @@ RDEPEND="
 	dev-libs/pmloglib
 "
 
-RESTRICT="fetch"
+PATCHES=( "${FILESDIR}/0001-Remove-build-system-check.patch" )
 
-src_prepare() {
-	cmake-utils_src_prepare
-	epatch "${FILESDIR}/0001-Remove-build-system-check.patch"
-}
+RESTRICT="fetch"
 
 src_install() {
 	cmake-utils_src_install

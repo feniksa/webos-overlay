@@ -1,4 +1,5 @@
-EAPI="5"
+EAPI=5
+
 inherit webos-cmake webos-github
 
 DESCRIPTION="The Open webOS logging library"
@@ -10,7 +11,4 @@ LICENSE="Apache-2.0"
 
 DEPEND="dev-libs/libpbnjson"
 
-src_prepare() {
-	epatch "${FILESDIR}/0001-Add-to-pkgconfig-file-pbnjson-library-dependency.patch"
-	cmake-utils_src_prepare
-}
+PATCHES=( "${FILESDIR}/0001-Add-to-pkgconfig-file-pbnjson-library-dependency.patch" )

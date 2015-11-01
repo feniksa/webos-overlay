@@ -8,14 +8,12 @@ SLOT="0"
 
 KEYWORDS="~x86 ~amd64 ~arm"
 LICENSE="Apache-2.0"
+
 DEPEND="dev-util/cmake"
 
-RESTRICT="fetch"
+PATCHES=( "${FILESDIR}/0001-Remove-GTEST-source-search.patch" )
 
-src_prepare() {
-	epatch "${FILESDIR}/0001-Remove-GTEST-source-search.patch"
-	cmake-utils_src_prepare
-}
+RESTRICT="fetch"
 
 src_configure() {
 	local mycmakeargs=(

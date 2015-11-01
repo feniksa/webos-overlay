@@ -1,4 +1,5 @@
-EAPI="5"
+EAPI=5
+
 inherit webos-cmake webos-github
 
 DESCRIPTION="Utility to communicate with a target device over USB or TCP/IP."
@@ -11,11 +12,7 @@ IUSE="upstart"
 
 DEPEND="dev-libs/libusb"
 
-src_prepare() {
-	cmake-utils_src_prepare
-	epatch "${FILESDIR}/0011-Fix-USB-read-write-operations.patch"
-	epatch "${FILESDIR}/0011-Remove-verbose-output.patch"
-}
+PATCHES=( "${FILESDIR}/0011-Fix-USB-read-write-operations.patch" "${FILESDIR}/0011-Remove-verbose-output.patch" )
 
 src_configure() {
 	local mycmakeargs+=(
