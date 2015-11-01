@@ -12,7 +12,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples test"
 
 DEPEND="dev-libs/boost"
-RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${P}-final"
 

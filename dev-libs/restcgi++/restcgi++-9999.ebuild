@@ -16,7 +16,6 @@ KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
 IUSE="examples"
 
 DEPEND="dev-libs/boost virtual/mysql"
-RDEPEND="${DEPEND}"
 
 src_configure() {
         local mycmakeargs=(

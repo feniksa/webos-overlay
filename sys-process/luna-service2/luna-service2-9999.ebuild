@@ -1,3 +1,7 @@
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
 EAPI=5
 
 inherit webos-cmake webos-github
@@ -7,7 +11,7 @@ HOMEPAGE="https://github.com/openwebos/luna-service2"
 SLOT="0"
 
 KEYWORDS=""
-LICENSE="Apache2"
+LICENSE="Apache-2.0"
 
 RDEPEND="
 	dev-libs/libpbnjson
@@ -31,4 +35,3 @@ src_install() {
 	rm "${D}"/etc/init/* || die "Can't remove upstart scripts, recheck ebuild"
 	rmdir "${D}"/etc/init || die "Can't remove /opt/webos/etc/init dir, recheck ebuild"
 }
-
