@@ -15,9 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="examples test"
 
 DEPEND="dev-libs/boost dev-cpp/gtest"
-RDEPEND="${DEPEND}"
-
-#S="${WORKDIR}"
 
 src_configure() {
 	local mycmakeargs=(

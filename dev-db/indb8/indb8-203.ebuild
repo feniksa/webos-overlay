@@ -22,8 +22,6 @@ DEPEND="dev-libs/glib
 		dev-libs/icu
 		!!dev-db/db8"
 
-RDEPEND="${DEPEND}"
-
 src_configure() {
         local mycmakeargs=(
 				$(cmake-utils_use_build ls2      	   LS2)
