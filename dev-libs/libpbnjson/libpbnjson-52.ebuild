@@ -2,8 +2,7 @@ EAPI=5
 
 inherit webos-cmake webos-github
 
-DESCRIPTION="A JSON engine, implemented as a pair of libraries with APIs for
-easier C and C++ abstraction over the core PBNJSON library."
+DESCRIPTION="Palm's Better Native JSON library"
 HOMEPAGE="https://github.com/openwebos/libpbnjson"
 SLOT="0"
 
