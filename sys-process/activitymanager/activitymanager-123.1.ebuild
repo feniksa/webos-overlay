@@ -5,8 +5,8 @@ DESCRIPTION="Open webOS component to manage all running activities."
 HOMEPAGE="https://github.com/openwebos/activitymanager"
 SLOT="0"
 
-KEYWORDS="amd64"
-LICENSE="LGPL-2.1"
+KEYWORDS="x86 amd64 ~arm"
+LICENSE="Apache-2.0"
 
 RDEPEND="dev-db/configurator"
 DEPEND="dev-libs/pmloglib
@@ -17,7 +17,7 @@ DEPEND="dev-libs/pmloglib
 src_install() {
 	cmake-utils_src_install
 
-	newinitd "${FILESDIR}/activitymanager" activitymanager 
+	newinitd "${FILESDIR}/activitymanager" activitymanager
 
 	# remove even'd files as we doesn't support them
 	rm -rf "${D}"/etc/event.d || die "Can't remove event.d files, recheck ebuild"

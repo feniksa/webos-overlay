@@ -1,20 +1,18 @@
-EAPI="5"
+EAPI=5
+
 inherit webos-cmake webos-github
 
 DESCRIPTION="Utility to invoke nyx library device type commands."
 HOMEPAGE="https://github.com/openwebos/nyx-utils"
 SLOT="0"
 
-KEYWORDS="amd64"
-LICENSE="LGPL-2.1"
+KEYWORDS="x86 amd64 ~arm"
+LICENSE="Apache-2.0"
+
 DEPEND="dev-libs/glib
 		dev-libs/nyx-lib"
 
-src_prepare() {
-	epatch "${FILESDIR}/0001-Add-fpermissive-flag.patch"
-	cmake-utils_src_prepare
-}
-
+PATCHES=( "${FILESDIR}/0001-Add-fpermissive-flag.patch" )
 
 src_install() {
     cmake-utils_src_install
@@ -24,4 +22,3 @@ src_install() {
 
 	newinitd "${FILESDIR}/nyx-utils" nyx-utils
 }
-

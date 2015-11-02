@@ -5,5 +5,5 @@ DESCRIPTION="librolegen dynamically generates webOS system bus role files for we
 HOMEPAGE="https://github.com/openwebos/librolegen"
 SLOT="0"
 
-KEYWORDS="x86 amd64"
-LICENSE="Apache2"
+KEYWORDS="x86 amd64 ~arm"
+LICENSE="Apache-2.0"
