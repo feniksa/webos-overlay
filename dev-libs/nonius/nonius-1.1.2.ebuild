@@ -6,7 +6,8 @@ LICENSE="CC0"
 KEYWORDS="x86 amd64"
 SLOT=0
 
-depend="dev-util/ninja"
+DEPEND="dev-util/ninja"
+
 S="${WORKDIR}/nonius-1.1.2"
 
 src_prepare() {
