@@ -1,4 +1,4 @@
-EAPI="5"
+EAPI="7"
 inherit webos-cmake
 
 DESCRIPTION="A userspace service that provides access to the Open webOS database"
@@ -10,7 +10,7 @@ KEYWORDS="amd64"
 LICENSE="Apache-2.0"
 
 if [[ ${PV} = *9999* ]]; then
-	inherit git-2
+	inherit git-r3
 	EGIT_REPO_URI="git://github.com/feniksa/indb8.git"
 	EGIT_BRANCH="master"
 	KEYWORDS=""
