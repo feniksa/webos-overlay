@@ -13,7 +13,7 @@ else
 fi
 
 DESCRIPTION="Generate tag file for C++ source code"
-HOMEPAGE="http://www.doxygen.org"
+HOMEPAGE="https://github.com/drothlis/clang-ctags"
 
 LICENSE="UIUC"
 SLOT="0"
