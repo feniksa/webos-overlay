@@ -1,6 +1,6 @@
 EAPI=7
 PYTHON_COMPAT=( python3_{6,7,8} )
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 
 inherit eutils 
 if [[ ${PV} = *9999* ]]; then
