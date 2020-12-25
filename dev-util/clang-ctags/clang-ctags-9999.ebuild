@@ -1,8 +1,12 @@
 EAPI=7
 PYTHON_COMPAT=( python3_{6,7,8} )
-KEYWORDS="~amd64 ~x86"
 
-inherit eutils 
+inherit eutils
+
+DESCRIPTION="Generate tag file for C++ source code"
+HOMEPAGE="https://github.com/drothlis/clang-ctags"
+LICENSE="UIUC"
+
 if [[ ${PV} = *9999* ]]; then
         inherit git-r3
         EGIT_REPO_URI="https://github.com/drothlis/clang-ctags.git"
@@ -12,11 +16,10 @@ else
         SRC_URI="https://github.com/drothlis/clang-ctags/archive/{P}.tar.gz"
 fi
 
-DESCRIPTION="Generate tag file for C++ source code"
-HOMEPAGE="https://github.com/drothlis/clang-ctags"
-
-LICENSE="UIUC"
 SLOT="0"
+
+IUSE=""
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="sys-devel/clang"
 DEPEND="dev-python/docutils"
