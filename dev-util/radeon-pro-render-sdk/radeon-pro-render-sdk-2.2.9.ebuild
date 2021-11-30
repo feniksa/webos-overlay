@@ -7,7 +7,7 @@ HOMEPAGE="https://www.amd.com/en/technologies/radeon-prorender"
 
 LICENSE="Apache-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="examples"
 
 # should depend from amd or nvidia drivers + opencl
