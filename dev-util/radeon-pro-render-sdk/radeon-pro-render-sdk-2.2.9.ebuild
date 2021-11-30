@@ -4,11 +4,11 @@ inherit eutils
 
 DESCRIPTION="AMD Radeontm ProRender is a powerful physically-based rendering engine"
 HOMEPAGE="https://www.amd.com/en/technologies/radeon-prorender"
-
-LICENSE="Apache-2.0"
+ICENSE="Apache-2.0"
 SLOT="0/${PV}"
 KEYWORDS="amd64"
 IUSE="examples"
+SRC_URI="https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderSDK/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 # should depend from amd or nvidia drivers + opencl
 RDEPEND="virtual/opencl
@@ -22,15 +22,6 @@ PATCHES=(
 	"${FILESDIR}/0003-Fix-warning-multi-character-character-constant.patch"
 )
 
-if [[ ${PV} == 9999 ]]; then
-	inherit git-r3
-    EGIT_REPO_URI="git@github.com:GPUOpen-LibrariesAndSDKs/RadeonProRenderSDK.git"
-else
-	SRC_URI="https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderSDK/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
-fi
-
-
-SRC_URI="https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderSDK/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 S="${WORKDIR}/RadeonProRenderSDK-2.2.9"
 
