@@ -13,7 +13,7 @@ SRC_URI="https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderSDK/archive/
 # should depend from amd or nvidia drivers + opencl
 RDEPEND="virtual/opencl
 		>=dev-libs/opencl-icd-loader-2021.06.30
-		examples? ( sys-dev/gcc[openmp] )"
+		examples? ( sys-devel/gcc[openmp] )"
 DEPEND="${RDEPEND}"
 RESTRICT="strip"
 
