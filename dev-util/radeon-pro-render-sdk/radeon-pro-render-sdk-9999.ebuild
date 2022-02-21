@@ -4,30 +4,29 @@ inherit eutils
 
 DESCRIPTION="AMD Radeontm ProRender is a powerful physically-based rendering engine"
 HOMEPAGE="https://www.amd.com/en/technologies/radeon-prorender"
-
-LICENSE="Apache-2.0"
+ICENSE="Apache-2.0"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="examples"
 
 # should depend from amd or nvidia drivers + opencl
 RDEPEND="virtual/opencl
-		>=dev-libs/opencl-icd-loader-2021.06.30"
+		>=dev-libs/opencl-icd-loader-2021.06.30
+		examples? ( sys-devel/gcc[openmp] )"
 DEPEND="${RDEPEND}"
 RESTRICT="strip"
+
+S="${WORKDIR}/RadeonProRenderSDK-${PV}"
 
 if [[ ${PV} == "9999" ]]; then
     EGIT_REPO_URI="https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderSDK.git"
     EGIT_BRANCH="master"
 	inherit git-r3
+
+	S="${WORKDIR}/radeon-pro-render-sdk-9999"
 else
 	SRC_URI="https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderSDK/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 fi
-
-
-#SRC_URI="https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderSDK/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
-
-S="${WORKDIR}/radeon-pro-render-sdk-9999"
 
 src_configure() {
 	default
