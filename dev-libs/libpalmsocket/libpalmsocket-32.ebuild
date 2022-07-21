@@ -1,4 +1,4 @@
-EAPI=5
+EAPI=6
 
 inherit webos-cmake webos-github
 
@@ -13,5 +13,5 @@ DEPEND="
 	net-dns/c-ares
 	dev-libs/pmstatemachineengine
 	dev-libs/glib
-    dev-libs/pmloglib
+	dev-libs/pmloglib
 "

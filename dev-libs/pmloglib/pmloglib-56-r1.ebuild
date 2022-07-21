@@ -1,15 +1,15 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="5"
+EAPI="6"
 
 inherit webos-cmake webos-github cmake-utils
 
 DESCRIPTION="The Open webOS logging library, private interface"
 HOMEPAGE="https://github.com/openwebos/pmloglib"
 
-KEYWORDS="x86 amd64"
+KEYWORDS="x86 amd64 ~arm"
 LICENSE="Apache-2.0"
 IUSE="-loggingon -parseonly"
 

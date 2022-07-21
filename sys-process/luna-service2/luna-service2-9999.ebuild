@@ -1,4 +1,4 @@
-EAPI=5
+EAPI=6
 
 inherit webos-cmake webos-github
 
@@ -6,7 +6,7 @@ DESCRIPTION="Open webOS Luna System Bus library, daemon, and utilities"
 HOMEPAGE="https://github.com/openwebos/luna-service2"
 SLOT="0"
 
-KEYWORDS=""
+KEYWORDS="~x86 ~amd64 ~arm"
 LICENSE="Apache-2.0"
 
 DEPEND="dev-util/cmake-modules-webos"

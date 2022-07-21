@@ -1,4 +1,4 @@
-EAPI="5"
+EAPI="6"
 inherit webos-cmake webos-github
 
 DESCRIPTION="Open webOS Platform Portability Layer"

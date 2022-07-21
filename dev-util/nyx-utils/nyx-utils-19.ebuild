@@ -1,4 +1,4 @@
-EAPI=5
+EAPI=6
 
 inherit webos-cmake webos-github
 
@@ -15,7 +15,7 @@ DEPEND="dev-libs/glib
 PATCHES=( "${FILESDIR}/0001-Add-fpermissive-flag.patch" )
 
 src_install() {
-    cmake-utils_src_install
+	cmake-utils_src_install
 
 	rm -f "${D}"/etc/init/nyx-utils.conf || die "This install doesn't provide upstart file Novacomd. Please, re-check ebuild"
 	rm -f "${D}"/etc/event.d/nyx-utils || die "This install doesn't provide upstart file Novacomd. Please, re-check ebuild"

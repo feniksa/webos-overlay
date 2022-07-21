@@ -1,7 +1,7 @@
-EAPI="5"
+EAPI="6"
 inherit webos-cmake webos-github
 
-DESCRIPTION="librolegen dynamically generates webOS system bus role files for webOS Javascript services."
+DESCRIPTION="Dynamically generates WebOS system bus role files for Javascript services."
 HOMEPAGE="https://github.com/openwebos/librolegen"
 SLOT="0"
 

@@ -1,4 +1,4 @@
-EAPI=5
+EAPI=6
 
 inherit webos-cmake webos-github
 
@@ -16,7 +16,7 @@ PATCHES=( "${FILESDIR}/0011-Fix-USB-read-write-operations.patch" "${FILESDIR}/00
 
 src_configure() {
 	local mycmakeargs+=(
-	    -DWEBOS_TARGET_MACHINE_IMPL=host
+		-DWEBOS_TARGET_MACHINE_IMPL=host
 	)
 
 	webos-cmake_src_configure

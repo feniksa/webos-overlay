@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-libs/fcgi/fcgi-2.4.1_pre0910052249.ebuild,v 1.9 2012/07/29 23:56:22 blueness Exp $
 
-EAPI="5"
+EAPI="6"
 
 inherit git-r3 cmake-utils
 
@@ -19,10 +19,10 @@ DEPEND="dev-libs/boost virtual/mysql"
 RDEPEND="${DEPEND}"
 
 src_configure() {
-        local mycmakeargs=(
-                $(cmake-utils_use_build examples EXAMPLES)
-				-DCGI_BIN=/var/share/localhost/cgi-bin/
-        )
+	local mycmakeargs=(
+		$(cmake-utils_use_build examples EXAMPLES)
+		-DCGI_BIN=/var/share/localhost/cgi-bin/
+	)
 
-        cmake-utils_src_configure
+	cmake-utils_src_configure
 }

@@ -1,12 +1,12 @@
-EAPI="5"
+EAPI="6"
 inherit cmake-utils
 
-DESCRIPTION="Template library to build complex storage schema with leveldb as a backend"
+DESCRIPTION="Template library to build complex storage schema with leveldb"
 HOMEPAGE="https://github.com/ony/leveldb-tl"
 AUTHOR="Nikolay Orliuk <virkony@gmail.com>"
 SLOT="0"
 
-KEYWORDS="amd64"
+KEYWORDS="x86 amd64 ~arm"
 LICENSE="Apache-2.0"
 DEPEND="dev-libs/leveldb"
 

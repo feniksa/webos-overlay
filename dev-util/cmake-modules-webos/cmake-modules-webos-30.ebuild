@@ -1,4 +1,4 @@
-EAPI=5
+EAPI=6
 
 inherit cmake-utils webos-github
 
@@ -13,6 +13,7 @@ DEPEND="dev-util/cmake"
 
 PATCHES=( "${FILESDIR}/0001-Remove-GTEST-source-search.patch" )
 
+# note: non public availalbe. Keep for historic reason
 RESTRICT="fetch"
 
 src_configure() {

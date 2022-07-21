@@ -1,4 +1,4 @@
-EAPI=5
+EAPI=6
 
 inherit webos-cmake webos-github
 
@@ -18,6 +18,7 @@ RDEPEND="
 
 PATCHES=( "${FILESDIR}/0001-Remove-build-system-check.patch" )
 
+# note: non public availalbe. Keep for historic reason
 RESTRICT="fetch"
 
 src_install() {

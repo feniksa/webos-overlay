@@ -1,4 +1,4 @@
-EAPI="5"
+EAPI=6
 inherit webos-cmake webos-github
 
 DESCRIPTION="Creates the database schema for webos Applications"

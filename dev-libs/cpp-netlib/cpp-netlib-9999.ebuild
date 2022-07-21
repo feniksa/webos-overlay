@@ -1,4 +1,4 @@
-EAPI="5"
+EAPI="6"
 
 inherit cmake-utils git-r3
 
@@ -11,7 +11,7 @@ EGIT_COMMIT="769e5c65a27bf1928c8bf94ff4a7680444787ee7"
 
 LICENSE="Boost-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE="examples test"
 
 DEPEND="dev-libs/boost dev-cpp/gtest"
@@ -22,9 +22,8 @@ RDEPEND="${DEPEND}"
 src_configure() {
 	local mycmakeargs=(
 		-DBUILD_SHARED_LIBS=ON
-		 $(cmake-utils_use test CPP-NETLIB_BUILD_TESTS )
-		 $(cmake-utils_use examples CPP-NETLIB_BUILD_EXAMPLES )
-
+		$(cmake-utils_use test CPP-NETLIB_BUILD_TESTS )
+		$(cmake-utils_use examples CPP-NETLIB_BUILD_EXAMPLES )
 	)
 	cmake-utils_src_configure
 }
