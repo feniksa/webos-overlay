@@ -12,7 +12,7 @@ LICENSE="Apache-2.0"
 DEPEND=">=dev-util/cmake-modules-webos-19"
 
 RDEPEND="
-	>=dev-libs/libpbnjson-30
+	dev-libs/libpbnjson
 	dev-libs/pmloglib
 "
 

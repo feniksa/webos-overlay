@@ -1,4 +1,4 @@
-# Copyright 2014-2015 Maksym Sditanov <feniksa@rambler.ru>
+# Copyright 2014-2022 Maksym Sditanov <feniksa@200volts.com>
 # Distributed under the terms of the Apache 2 License
 # $Header: $
 

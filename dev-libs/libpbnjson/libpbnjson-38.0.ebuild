@@ -26,7 +26,7 @@ RDEPEND="
 
 src_configure() {
 	local mycmakeargs+=(
-		$(cmake-utils_use nolog NO_LOGGING)
+		-DNO_LOGGING="$(usex nolog)"
 	)
 	webos-cmake_src_configure
 }
